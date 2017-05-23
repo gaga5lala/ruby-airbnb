@@ -276,7 +276,7 @@ Airbnb 也在维护 [JavaScript 风格指南][airbnb-javascript]。
 
 ## 行宽 (Line Length)
 
-* 把每一行控制在可读宽度内， 
+* 把每一行控制在可读宽度内，
   除非有特别理由, 每一行应小于 100 个字符
   ([rationale](./rationales.md#line-length))<sup>
   [[link](#line-length)]</sup>
@@ -490,12 +490,11 @@ TODO 应该全大写, 然后是写这个注释的人名, 用圆括号括起来, 
 
     # 正确
     def obliterate(things, options = {})
-      default_options = {
+      options = {
         :gently => true, # obliterate with soft-delete
         :except => [], # skip obliterating these things
         :at => Time.now, # don't obliterate them until later
-      }
-      options.reverse_merge!(default_options)
+      }.merge(options)
 
       ...
     end
@@ -701,7 +700,7 @@ TODO 应该全大写, 然后是写这个注释的人名, 用圆括号括起来, 
 
 ### 三元操作符 (Ternary operator)
 
-* <a name="avoid-complex-ternary"></a>避免使用三元操作符 (`?:`)，如果不用三元操作符会变得很啰嗦才用。 
+* <a name="avoid-complex-ternary"></a>避免使用三元操作符 (`?:`)，如果不用三元操作符会变得很啰嗦才用。
     对于单行的条件, 用三元操作符(`?:`) 而不是 `if/then/else/end`.<sup>[[link](#avoid-complex-ternary)]</sup>
 
     ```ruby
@@ -766,7 +765,7 @@ TODO 应该全大写, 然后是写这个注释的人名, 用圆括号括起来, 
 
 * <a name="single-line-blocks"></a>
     单行的情况下, 尽量用 `{...}` 而不是 `do...end`。  
-    多行的情况下避免用 `{...}`. 
+    多行的情况下避免用 `{...}`.
     对于 "control flow" 和 "方法定义"(举例: 在 Rakefiles 和某些 DSLs 里) 总是用 `do...end`。  
     方法连用(chaining)时 避免使用 `do...end` 。<sup>[[link](#single-line-blocks)]</sup>
 
@@ -1174,7 +1173,7 @@ TODO 应该全大写, 然后是写这个注释的人名, 用圆括号括起来, 
 
 * <a name="size-over-count"></a>尽量用 `size`， 而不是  `length` 或者 `count`， 出于性能理由。<sup>[[link](#size-over-count)]</sup>
 
-* <a name="empty-collection-literals"></a>尽量用数组和 hash 字面量来创建， 
+* <a name="empty-collection-literals"></a>尽量用数组和 hash 字面量来创建，
     而不是用 new。 除非你需要传参数。
     <sup>[[link](#empty-collection-literals)]</sup>
 
@@ -1225,7 +1224,7 @@ TODO 应该全大写, 然后是写这个注释的人名, 用圆括号括起来, 
     :symbol
     ```
 
-* <a name="deprecated-hash-methods"></a>用 `Hash#key?` 而不是 `Hash#has_key?` 
+* <a name="deprecated-hash-methods"></a>用 `Hash#key?` 而不是 `Hash#has_key?`
     用 `Hash#value?` 而不是 `Hash#has_value?`.
     根据 Matz 的说法, 长一点的那种写法在考虑要废弃掉。
     <sup>[[link](#deprecated-hash-methods")</sup>
@@ -1298,7 +1297,7 @@ TODO 应该全大写, 然后是写这个注释的人名, 用圆括号括起来, 
     ```
 
 * <a name="string-concatenation"></a>在需要构建大数据块时，避免使用 `String#+`。  
-    而是用 `String#<<`. 它可以原位拼接字符串而且它总是快于 `String#+`, 
+    而是用 `String#<<`. 它可以原位拼接字符串而且它总是快于 `String#+`,
     这种用加号的语法会创建一堆新的字符串对象.<sup>[[link](#string-concatenation)]</sup>
 
     ```ruby
