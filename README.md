@@ -1227,7 +1227,7 @@ TODO 应该全大写, 然后是写这个注释的人名, 用圆括号括起来, 
 * <a name="deprecated-hash-methods"></a>用 `Hash#key?` 而不是 `Hash#has_key?`
     用 `Hash#value?` 而不是 `Hash#has_value?`.
     根据 Matz 的说法, 长一点的那种写法在考虑要废弃掉。
-    <sup>[[link](#deprecated-hash-methods")</sup>
+    <sup>[[link](#deprecated-hash-methods)]</sup>
 
     ```ruby
     # 错误
